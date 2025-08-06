@@ -10,5 +10,4 @@ pub trait Tool: Send + Sync {
     async fn execute(&self, arguments: Value) -> Result<Value, Box<dyn Error>>;
 }
 
-
 pub type CreateToolFn = unsafe extern fn() -> *mut dyn Tool;
