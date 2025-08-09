@@ -7,7 +7,7 @@ pub trait Tool: Send + Sync {
     fn name(&self) -> &str;
     fn description(&self) -> &str;
     fn parameters(&self) -> Value;
-    async fn execute(&self, arguments: String) -> Result<Value, Box<dyn Error>>;
+    async fn execute(&self, arguments: Value) -> Result<Value, Box<dyn Error>>;
 }
 
 
